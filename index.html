@@ -197,5 +197,41 @@
 </main>
 
 <footer>盛の祭を知る　｜　SAKARI FESTIVAL GUIDE</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+let current = 0;
+let isAnimating = false;
+
+cards[0].classList.add('active');
+
+cards.forEach((card) => {
+  card.addEventListener('click', () => {
+    if (isAnimating) return;
+
+    isAnimating = true;
+
+    const currentCard = cards[current];
+    const nextIndex = (current + 1) % cards.length;
+    const nextCard = cards[nextIndex];
+
+    nextCard.classList.add('next');
+
+    requestAnimationFrame(() => {
+      currentCard.classList.add('prev');
+      nextCard.classList.add('active');
+    });
+
+    setTimeout(() => {
+      currentCard.classList.remove('active', 'prev');
+      nextCard.classList.remove('next');
+
+      current = nextIndex;
+      isAnimating = false;
+    }, 500);
+  });
+});
+</script>
+
 </body>
 </html>
