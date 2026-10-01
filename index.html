@@ -682,6 +682,8 @@ function slideTo(nextIndex, direction){
   }
 
 
+  /* アニメーション開始 */
+
   requestAnimationFrame(() => {
 
     nextCard.classList.add('active');
@@ -689,7 +691,11 @@ function slideTo(nextIndex, direction){
   });
 
 
+  /* アニメーション終了 */
+
   setTimeout(() => {
+
+    /* 今まで表示していたカードを非表示 */
 
     currentCard.classList.remove(
       'active',
@@ -697,11 +703,14 @@ function slideTo(nextIndex, direction){
       'back'
     );
 
+
+    /* 次のカードは active のままにする */
+
     nextCard.classList.remove(
       'next',
-      'active',
       'back'
     );
+
 
     current = nextIndex;
 
