@@ -1,4 +1,6 @@
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 :root{
   --paper:#f7f5ef;
@@ -22,6 +24,11 @@ body{
   line-height:1.95;
 }
 
+
+/* =========================
+   ヘッダー
+   ========================= */
+
 .hero{
   max-width:800px;
   margin:0 auto;
@@ -36,7 +43,8 @@ body{
   letter-spacing:.18em;
 }
 
-h1,h2{
+h1,
+h2{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-weight:600;
 }
@@ -68,17 +76,32 @@ h1{
   width:min(820px,calc(100% - 28px));
   margin:0 auto;
   padding-bottom:70px;
+}
 
+.card-area{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) 40px;
+  align-items:center;
+  gap:10px;
+}
+
+.card-stage{
   position:relative;
   overflow:hidden;
+  width:100%;
 }
+
+
+/* =========================
+   カード本体
+   ========================= */
 
 .card{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   padding:clamp(28px,6vw,52px);
-  margin-bottom:0;
+  margin:0;
   box-shadow:0 7px 25px rgba(40,35,25,.045);
 
   display:none;
@@ -94,6 +117,11 @@ h1{
   display:block;
 }
 
+
+/* =========================
+   次へ進むスライド
+   ========================= */
+
 .card.next{
   display:block;
   position:absolute;
@@ -102,20 +130,16 @@ h1{
   transform:translateX(100%);
 }
 
-.card.prev{
-  animation:slideOut .5s ease forwards;
-}
-
 .card.next.active{
-  animation:slideIn .5s ease forwards;
+  animation:slideInNext .5s ease forwards;
 }
 
+.card.prev{
+  animation:slideOutPrev .5s ease forwards;
+}
 
-/* =========================
-   スライド
-   ========================= */
+@keyframes slideInNext{
 
-@keyframes slideIn{
   from{
     opacity:0;
     transform:translateX(100%);
@@ -125,9 +149,11 @@ h1{
     opacity:1;
     transform:translateX(0);
   }
+
 }
 
-@keyframes slideOut{
+@keyframes slideOutPrev{
+
   from{
     opacity:1;
     transform:translateX(0);
@@ -137,6 +163,76 @@ h1{
     opacity:0;
     transform:translateX(-100%);
   }
+
+}
+
+
+/* =========================
+   前へ戻るスライド
+   ========================= */
+
+.card.next.back{
+  transform:translateX(-100%);
+}
+
+.card.next.back.active{
+  animation:slideInPrev .5s ease forwards;
+}
+
+.card.prev.back{
+  animation:slideOutNext .5s ease forwards;
+}
+
+@keyframes slideInPrev{
+
+  from{
+    opacity:0;
+    transform:translateX(-100%);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+}
+
+@keyframes slideOutNext{
+
+  from{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+  to{
+    opacity:0;
+    transform:translateX(100%);
+  }
+
+}
+
+
+/* =========================
+   カードナビゲーション
+   ========================= */
+
+.card-nav{
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-size:24px;
+  padding:10px 2px;
+  cursor:pointer;
+  opacity:.65;
+  transition:opacity .2s ease;
+}
+
+.card-nav:hover{
+  opacity:1;
+}
+
+.card-nav:active{
+  transform:scale(.9);
 }
 
 
@@ -173,6 +269,11 @@ strong{
   font-weight:600;
 }
 
+
+/* =========================
+   強調テキスト
+   ========================= */
+
 .key{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:18px;
@@ -182,6 +283,11 @@ strong{
   color:#b8753f;
 }
 
+
+/* =========================
+   リスト
+   ========================= */
+
 ul{
   margin:0 0 18px;
   padding-left:1.35em;
@@ -190,6 +296,11 @@ ul{
 li{
   margin-bottom:10px;
 }
+
+
+/* =========================
+   2カラム
+   ========================= */
 
 .two-column{
   display:grid;
@@ -210,6 +321,11 @@ li{
   font-size:12px;
   letter-spacing:.12em;
 }
+
+
+/* =========================
+   流れ
+   ========================= */
 
 .flow{
   border-top:1px solid var(--line);
@@ -233,21 +349,41 @@ li{
   color:var(--muted);
 }
 
+
+/* =========================
+   役割
+   ========================= */
+
 .roles{
   padding:17px 10px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
+
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+
   font-size:16px;
   line-height:2.2;
 }
 
+
+/* =========================
+   質問
+   ========================= */
+
 .question{
   margin-top:27px;
+
   color:#5f756f;
+
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+
   font-size:16px;
 }
+
+
+/* =========================
+   用語
+   ========================= */
 
 .terms{
   display:flex;
@@ -258,19 +394,35 @@ li{
 
 .terms span{
   padding:8px 18px;
+
   border:1px solid var(--line);
   border-radius:99px;
+
   background:#fbfaf5;
+
   font-size:14px;
 }
+
+
+/* =========================
+   注記
+   ========================= */
 
 .note{
   margin:24px 0;
   padding:15px 17px;
+
   border-left:3px solid var(--blue);
+
   background:#f5f6f1;
+
   font-size:13px;
 }
+
+
+/* =========================
+   最後のカード
+   ========================= */
 
 .final{
   padding-bottom:58px;
@@ -280,10 +432,18 @@ li{
   margin-top:28px;
 }
 
+
+/* =========================
+   フッター
+   ========================= */
+
 footer{
   padding:32px 20px 45px;
+
   text-align:center;
+
   color:var(--muted);
+
   font-size:10px;
   letter-spacing:.12em;
 }
@@ -303,9 +463,19 @@ footer{
     width:calc(100% - 20px);
   }
 
+  .card-area{
+    grid-template-columns:28px minmax(0,1fr) 28px;
+    gap:3px;
+  }
+
   .card{
     padding:27px 23px;
     border-radius:15px;
+  }
+
+  .card-nav{
+    font-size:20px;
+    padding:12px 2px;
   }
 
   .two-column{
@@ -324,57 +494,6 @@ footer{
 
   .key{
     font-size:16px;
-  }
-}
-
-/* =========================
-   カードナビゲーション
-   ========================= */
-
-.card-area{
-  display:grid;
-  grid-template-columns:40px 1fr 40px;
-  align-items:center;
-  gap:10px;
-}
-
-.card-stage{
-  position:relative;
-  overflow:hidden;
-}
-
-.card-nav{
-  border:0;
-  background:none;
-  color:var(--muted);
-  font-size:24px;
-  padding:10px 2px;
-  cursor:pointer;
-  opacity:.65;
-  transition:opacity .2s ease;
-}
-
-.card-nav:hover{
-  opacity:1;
-}
-
-.card-nav:active{
-  transform:scale(.9);
-}
-
-
-/* スマートフォン */
-
-@media(max-width:600px){
-
-  .card-area{
-    grid-template-columns:28px 1fr 28px;
-    gap:3px;
-  }
-
-  .card-nav{
-    font-size:20px;
-    padding:12px 2px;
   }
 
 }
