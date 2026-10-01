@@ -81,10 +81,10 @@ h1{
   margin-bottom:0;
   box-shadow:0 7px 25px rgba(40,35,25,.045);
 
-  /* スライド用 */
   display:none;
   position:relative;
   width:100%;
+
   cursor:pointer;
   user-select:none;
   -webkit-tap-highlight-color:transparent;
@@ -92,7 +92,6 @@ h1{
 
 .card.active{
   display:block;
-  animation:slideIn .5s ease forwards;
 }
 
 .card.next{
@@ -100,7 +99,6 @@ h1{
   position:absolute;
   top:0;
   left:0;
-
   transform:translateX(100%);
 }
 
@@ -108,15 +106,13 @@ h1{
   animation:slideOut .5s ease forwards;
 }
 
-
-/* 次のカードが右から入ってくる */
 .card.next.active{
   animation:slideIn .5s ease forwards;
 }
 
 
 /* =========================
-   スライドアニメーション
+   スライド
    ========================= */
 
 @keyframes slideIn{
