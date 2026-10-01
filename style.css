@@ -326,3 +326,55 @@ footer{
     font-size:16px;
   }
 }
+
+/* =========================
+   カードナビゲーション
+   ========================= */
+
+.card-area{
+  display:grid;
+  grid-template-columns:40px 1fr 40px;
+  align-items:center;
+  gap:10px;
+}
+
+.card-stage{
+  position:relative;
+  overflow:hidden;
+}
+
+.card-nav{
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-size:24px;
+  padding:10px 2px;
+  cursor:pointer;
+  opacity:.65;
+  transition:opacity .2s ease;
+}
+
+.card-nav:hover{
+  opacity:1;
+}
+
+.card-nav:active{
+  transform:scale(.9);
+}
+
+
+/* スマートフォン */
+
+@media(max-width:600px){
+
+  .card-area{
+    grid-template-columns:28px 1fr 28px;
+    gap:3px;
+  }
+
+  .card-nav{
+    font-size:20px;
+    padding:12px 2px;
+  }
+
+}
