@@ -1,4 +1,5 @@
 *{box-sizing:border-box}
+
 :root{
   --paper:#f7f5ef;
   --card:#fffdf8;
@@ -8,7 +9,11 @@
   --orange:#d99657;
   --blue:#8fb8bb;
 }
-html{scroll-behavior:smooth}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--paper);
@@ -16,50 +21,133 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;
   line-height:1.95;
 }
+
 .hero{
   max-width:800px;
   margin:0 auto;
   padding:78px 24px 54px;
   text-align:center;
 }
+
 .eyebrow{
   margin:0 0 18px;
   color:var(--muted);
   font-size:11px;
   letter-spacing:.18em;
 }
+
 h1,h2{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-weight:600;
 }
+
 h1{
   margin:0 0 10px;
   font-size:clamp(36px,8vw,60px);
   letter-spacing:.09em;
 }
+
 .subtitle{
   margin:0 0 27px;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:clamp(15px,3.5vw,21px);
 }
+
 .lead{
   margin:0;
   color:var(--muted);
   font-size:14px;
 }
+
+
+/* =========================
+   カード
+   ========================= */
+
 .cards{
   width:min(820px,calc(100% - 28px));
   margin:0 auto;
   padding-bottom:70px;
+
+  position:relative;
+  overflow:hidden;
 }
+
 .card{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   padding:clamp(28px,6vw,52px);
-  margin-bottom:26px;
+  margin-bottom:0;
   box-shadow:0 7px 25px rgba(40,35,25,.045);
+
+  /* スライド用 */
+  display:none;
+  position:relative;
+  width:100%;
+  cursor:pointer;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
 }
+
+.card.active{
+  display:block;
+  animation:slideIn .5s ease forwards;
+}
+
+.card.next{
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+
+  transform:translateX(100%);
+}
+
+.card.prev{
+  animation:slideOut .5s ease forwards;
+}
+
+
+/* 次のカードが右から入ってくる */
+.card.next.active{
+  animation:slideIn .5s ease forwards;
+}
+
+
+/* =========================
+   スライドアニメーション
+   ========================= */
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateX(100%);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes slideOut{
+  from{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+  to{
+    opacity:0;
+    transform:translateX(-100%);
+  }
+}
+
+
+/* =========================
+   カード内
+   ========================= */
+
 .number{
   display:block;
   color:var(--orange);
@@ -67,41 +155,55 @@ h1{
   letter-spacing:.18em;
   margin-bottom:10px;
 }
+
 h2{
   margin:0 0 28px;
   font-size:clamp(23px,5vw,32px);
   line-height:1.55;
 }
+
 h3{
   margin:25px 0 5px;
   font-size:15px;
   color:#57534c;
 }
+
 p{
   margin:0 0 17px;
   font-size:15px;
 }
-strong{font-weight:600}
+
+strong{
+  font-weight:600;
+}
+
 .key{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:17px;
   line-height:1.9;
 }
+
 ul{
   margin:0 0 18px;
   padding-left:1.35em;
 }
-li{margin-bottom:10px}
+
+li{
+  margin-bottom:10px;
+}
+
 .two-column{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
   margin-bottom:25px;
 }
+
 .two-column>div{
   border-top:2px solid var(--blue);
   padding:17px 2px 0;
 }
+
 .label{
   display:block;
   margin-bottom:7px;
@@ -109,10 +211,12 @@ li{margin-bottom:10px}
   font-size:12px;
   letter-spacing:.12em;
 }
+
 .flow{
   border-top:1px solid var(--line);
   margin:8px 0 28px;
 }
+
 .flow>div{
   display:grid;
   grid-template-columns:145px 1fr;
@@ -120,8 +224,16 @@ li{margin-bottom:10px}
   padding:16px 0;
   border-bottom:1px solid var(--line);
 }
-.flow b{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif}
-.flow span{font-size:14px;color:var(--muted)}
+
+.flow b{
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+}
+
+.flow span{
+  font-size:14px;
+  color:var(--muted);
+}
+
 .roles{
   padding:17px 10px;
   border-top:1px solid var(--line);
@@ -130,18 +242,21 @@ li{margin-bottom:10px}
   font-size:16px;
   line-height:2.2;
 }
+
 .question{
   margin-top:27px;
   color:#5f756f;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:16px;
 }
+
 .terms{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
   margin:28px 0;
 }
+
 .terms span{
   padding:8px 18px;
   border:1px solid var(--line);
@@ -149,6 +264,7 @@ li{margin-bottom:10px}
   background:#fbfaf5;
   font-size:14px;
 }
+
 .note{
   margin:24px 0;
   padding:15px 17px;
@@ -156,12 +272,15 @@ li{margin-bottom:10px}
   background:#f5f6f1;
   font-size:13px;
 }
+
 .final{
   padding-bottom:58px;
 }
+
 .final .key:last-child{
   margin-top:28px;
 }
+
 footer{
   padding:32px 20px 45px;
   text-align:center;
@@ -169,12 +288,42 @@ footer{
   font-size:10px;
   letter-spacing:.12em;
 }
+
+
+/* =========================
+   スマートフォン
+   ========================= */
+
 @media(max-width:600px){
-  .hero{padding:60px 20px 44px}
-  .cards{width:calc(100% - 20px)}
-  .card{padding:27px 23px;border-radius:15px}
-  .two-column{grid-template-columns:1fr;gap:10px}
-  .flow>div{grid-template-columns:1fr;gap:3px}
-  p{font-size:14px}
-  .key{font-size:16px}
+
+  .hero{
+    padding:60px 20px 44px;
+  }
+
+  .cards{
+    width:calc(100% - 20px);
+  }
+
+  .card{
+    padding:27px 23px;
+    border-radius:15px;
+  }
+
+  .two-column{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .flow>div{
+    grid-template-columns:1fr;
+    gap:3px;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  .key{
+    font-size:16px;
+  }
 }
