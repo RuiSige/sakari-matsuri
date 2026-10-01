@@ -175,8 +175,10 @@ strong{
 
 .key{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
-  font-size:17px;
+  font-size:18px;
+  font-weight:600;
   line-height:1.9;
+  letter-spacing:.04em;
 }
 
 ul{
