@@ -214,37 +214,111 @@
 
 <script>
 const cards = document.querySelectorAll('.card');
+const prevButton = document.querySelector('.prev-btn');
+const nextButton = document.querySelector('.next-btn');
+
 let current = 0;
 let isAnimating = false;
 
 cards[0].classList.add('active');
 
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    if (isAnimating) return;
 
-    isAnimating = true;
+function slideTo(nextIndex, direction){
 
-    const currentCard = cards[current];
-    const nextIndex = (current + 1) % cards.length;
-    const nextCard = cards[nextIndex];
+  if(isAnimating) return;
+  if(nextIndex === current) return;
 
-    nextCard.classList.add('next');
+  isAnimating = true;
 
-    requestAnimationFrame(() => {
-      currentCard.classList.add('prev');
-      nextCard.classList.add('active');
-    });
+  const currentCard = cards[current];
+  const nextCard = cards[nextIndex];
 
-    setTimeout(() => {
-      currentCard.classList.remove('active', 'prev');
-      nextCard.classList.remove('next');
+  nextCard.classList.add('next');
 
-      current = nextIndex;
-      isAnimating = false;
-    }, 500);
+  if(direction === 'prev'){
+    nextCard.style.transform = 'translateX(-100%)';
+  }else{
+    nextCard.style.transform = 'translateX(100%)';
+  }
+
+  requestAnimationFrame(() => {
+
+    currentCard.classList.add('prev');
+
+    nextCard.classList.add('active');
+
+    nextCard.style.transform = 'translateX(0)';
+
   });
+
+  setTimeout(() => {
+
+    currentCard.classList.remove('active', 'prev');
+
+    nextCard.classList.remove('next');
+
+    nextCard.style.transform = '';
+
+    current = nextIndex;
+    isAnimating = false;
+
+  },500);
+}
+
+
+/* 次のカード */
+
+function nextCard(){
+
+  const nextIndex = (current + 1) % cards.length;
+
+  slideTo(nextIndex,'next');
+
+}
+
+
+/* 前のカード */
+
+function prevCard(){
+
+  const prevIndex = (current - 1 + cards.length) % cards.length;
+
+  slideTo(prevIndex,'prev');
+
+}
+
+
+/* 矢印 */
+
+nextButton.addEventListener('click',(event) => {
+
+  event.stopPropagation();
+
+  nextCard();
+
 });
+
+prevButton.addEventListener('click',(event) => {
+
+  event.stopPropagation();
+
+  prevCard();
+
+});
+
+
+/* カードをクリックすると次へ */
+
+cards.forEach((card) => {
+
+  card.addEventListener('click',() => {
+
+    nextCard();
+
+  });
+
+});
+
 </script>
 
 </body>
