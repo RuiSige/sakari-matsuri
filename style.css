@@ -174,11 +174,17 @@ strong{
 }
 
 .key{
+  margin:28px 0;
+  padding:14px 18px;
+
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:18px;
   font-weight:600;
   line-height:1.9;
-  letter-spacing:.04em;
+  letter-spacing:.05em;
+
+  border-left:4px solid var(--orange);
+  background:#fbf7ef;
 }
 
 ul{
