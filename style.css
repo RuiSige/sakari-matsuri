@@ -78,7 +78,7 @@ h1{
 }
 
 .subtitle{
-  margin:0 0 15px;
+  margin:0 0 8px;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:clamp(15px,3.5vw,21px);
 }
@@ -183,6 +183,7 @@ h1{
   color:#5e5a49;
   font-variant-numeric:tabular-nums;
 }
+
 
 /* =========================
    TEXT
@@ -403,7 +404,7 @@ footer{
   }
 
   .hero-illustration{
-    margin-top:4px;
+    margin-top:0;
   }
 
   .cards{
@@ -421,6 +422,15 @@ footer{
     width:34px;
     height:34px;
     font-size:15px;
+    transform:translateY(-35px);
+  }
+
+  .slide-button:hover:not(:disabled){
+    transform:translateY(-35px) scale(1.04);
+  }
+
+  .slide-button:active:not(:disabled){
+    transform:translateY(-35px) scale(.96);
   }
 
   .card{
