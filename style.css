@@ -1,3 +1,4 @@
+
 *{
   box-sizing:border-box;
 }
@@ -21,13 +22,8 @@ body{
   background:var(--paper);
   color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;
-  line-height:1.95;
+  line-height:1.8;
 }
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
   width:100%;
@@ -89,21 +85,11 @@ h1{
   font-size:14px;
 }
 
-
-/* =========================
-   SLIDER
-========================= */
-
 .cards{
   width:min(900px,calc(100% - 28px));
   margin:0 auto;
   padding:32px 0 70px;
 }
-
-
-/*
-  ◁　カード　▷
-*/
 
 .slider-wrap{
   display:grid;
@@ -112,16 +98,10 @@ h1{
   column-gap:10px;
 }
 
-
-/* カードを隠す窓 */
-
 .cards-viewport{
   width:100%;
   overflow:hidden;
 }
-
-
-/* 横に並ぶカード */
 
 .card-track{
   display:flex;
@@ -132,9 +112,6 @@ h1{
   touch-action:pan-y;
 }
 
-
-/* 1枚のカード */
-
 .card-track > .card{
   flex:0 0 auto;
   width:100%;
@@ -142,39 +119,22 @@ h1{
   margin:0;
 }
 
-
-/* =========================
-   SLIDER BUTTON
-========================= */
-
 .slide-button{
   display:grid;
   place-items:center;
-
   width:42px;
   height:42px;
-
   padding:0;
-
   border:1px solid #bcb58a;
   border-radius:50%;
-
   background:#fffdf8;
   color:var(--ink);
-
   font-family:inherit;
   font-size:18px;
   line-height:1;
-
   cursor:pointer;
-
-  box-shadow:
-    0 2px 8px rgba(40,35,25,.08);
-
-  transition:
-    background .2s,
-    opacity .2s,
-    transform .2s;
+  box-shadow:0 2px 8px rgba(40,35,25,.08);
+  transition:background .2s, opacity .2s, transform .2s;
 }
 
 .slide-button:hover:not(:disabled){
@@ -191,68 +151,46 @@ h1{
   cursor:default;
 }
 
-
-/* カード番号 */
-
 .slide-count{
   margin-top:16px;
-
   text-align:center;
-
   font-size:12px;
   color:#5e5a49;
-
   font-variant-numeric:tabular-nums;
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .card{
   background:var(--card);
-
   border:1px solid var(--line);
   border-radius:18px;
-
-  padding:clamp(28px,6vw,52px);
-
+  padding:clamp(24px,4vw,40px);
   margin-bottom:0;
-
-  box-shadow:
-    0 7px 25px rgba(40,35,25,.045);
+  box-shadow:0 7px 25px rgba(40,35,25,.045);
+  line-height:1.8;
 }
 
 .number{
   display:block;
-
   color:var(--orange);
-
   font-size:12px;
   letter-spacing:.18em;
-
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 h2{
-  margin:0 0 28px;
-
+  margin:0 0 20px;
   font-size:clamp(23px,5vw,32px);
-
-  line-height:1.55;
+  line-height:1.5;
 }
 
 h3{
-  margin:25px 0 5px;
-
+  margin:20px 0 5px;
   font-size:15px;
   color:#57534c;
 }
 
 p{
-  margin:0 0 17px;
-
+  margin:0 0 12px;
   font-size:15px;
 }
 
@@ -261,209 +199,118 @@ strong{
 }
 
 .key{
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    "Noto Serif JP",
-    serif;
-
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:17px;
-  line-height:1.9;
+  line-height:1.8;
 }
 
 ul{
-  margin:0 0 18px;
+  margin:0 0 14px;
   padding-left:1.35em;
 }
 
 li{
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
-
-
-/* =========================
-   TWO COLUMN
-========================= */
 
 .two-column{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:18px;
-
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .two-column > div{
   border-top:2px solid var(--blue);
-
-  padding:17px 2px 0;
+  padding:14px 2px 0;
 }
 
 .label{
   display:block;
-
   margin-bottom:7px;
-
   color:var(--muted);
-
   font-size:12px;
   letter-spacing:.12em;
 }
 
-
-/* =========================
-   FLOW
-========================= */
-
 .flow{
   border-top:1px solid var(--line);
-
-  margin:8px 0 28px;
+  margin:8px 0 22px;
 }
 
 .flow > div{
   display:grid;
-
   grid-template-columns:145px 1fr;
-
   gap:16px;
-
-  padding:16px 0;
-
+  padding:13px 0;
   border-bottom:1px solid var(--line);
 }
 
 .flow b{
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    "Noto Serif JP",
-    serif;
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
 }
 
 .flow span{
   font-size:14px;
-
   color:var(--muted);
 }
 
-
-/* =========================
-   ROLES
-========================= */
-
 .roles{
-  padding:17px 10px;
-
+  padding:14px 10px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    "Noto Serif JP",
-    serif;
-
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:16px;
-  line-height:2.2;
+  line-height:2;
 }
 
 .question{
-  margin-top:27px;
-
+  margin-top:22px;
   color:#5f756f;
-
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    "Noto Serif JP",
-    serif;
-
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:16px;
 }
 
-
-/* =========================
-   TERMS
-========================= */
-
 .terms{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
-  margin:28px 0;
+  margin:22px 0;
 }
 
 .terms span{
-  padding:8px 18px;
-
+  padding:7px 16px;
   border:1px solid var(--line);
   border-radius:99px;
-
   background:#fbfaf5;
-
   font-size:14px;
 }
 
-
-/* =========================
-   NOTE
-========================= */
-
 .note{
-  margin:24px 0;
-
-  padding:15px 17px;
-
+  margin:20px 0;
+  padding:13px 15px;
   border-left:3px solid var(--blue);
-
   background:#f5f6f1;
-
   font-size:13px;
 }
 
-
-/* =========================
-   FINAL
-========================= */
-
 .final{
-  padding-bottom:58px;
+  padding-bottom:48px;
 }
 
 .final .key:last-child{
-  margin-top:28px;
+  margin-top:22px;
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
   padding:32px 20px 45px;
-
   text-align:center;
-
   color:var(--muted);
-
   font-size:10px;
-
   letter-spacing:.12em;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:600px){
-
   .hero{
     padding:28px 0 0;
   }
@@ -480,76 +327,53 @@ footer{
     margin-top:4px;
   }
 
-
   .cards{
     width:calc(100% - 20px);
-
     padding-top:28px;
     padding-bottom:60px;
   }
-
-
-  /*
-    スマホでは
-    ◁　カード　▷
-    の間隔を小さく
-  */
 
   .slider-wrap{
     grid-template-columns:34px minmax(0,1fr) 34px;
     column-gap:4px;
   }
 
-
   .slide-button{
     width:34px;
     height:34px;
-
     font-size:15px;
   }
 
-
   .card{
-    padding:27px 23px;
-
+    padding:22px 20px;
     border-radius:15px;
   }
 
-
   .two-column{
     grid-template-columns:1fr;
-
     gap:10px;
   }
 
-
   .flow > div{
     grid-template-columns:1fr;
-
     gap:3px;
   }
-
 
   p{
     font-size:14px;
   }
 
-
   .key{
     font-size:16px;
   }
 
-
   .roles{
     font-size:14px;
-
     padding-left:5px;
     padding-right:5px;
   }
 
-
   .slide-count{
     margin-top:14px;
   }
-
 }
