@@ -310,6 +310,19 @@ footer{
   letter-spacing:.12em;
 }
 
+.footer-illustration{
+  width:100%;
+  margin:0;
+  line-height:0;
+  overflow:hidden;
+}
+
+.footer-illustration img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
 @media(max-width:600px){
   .hero{
     padding:28px 0 0;
