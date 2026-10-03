@@ -214,35 +214,85 @@
   const prev = document.querySelector('.slide-button.prev');
   const next = document.querySelector('.slide-button.next');
   const count = document.querySelector('.slide-count');
+
   let index = 0;
   let startX = 0;
   let startY = 0;
   let dragging = false;
 
-  function showCard(nextIndex) {
-    index = Math.max(0, Math.min(cards.length - 1, nextIndex));
-    track.style.transform = `translateX(-${index * 100}%)`;
-    count.textContent = `${index + 1} / ${cards.length}`;
+  const total = cards.length;
+
+  function showCard(newIndex) {
+    index = Math.max(0, Math.min(total - 1, newIndex));
+
+    /*
+      カード1枚分ずつ横へ移動
+    */
+    const move = index * 100;
+
+    track.style.transform = `translate3d(-${move}%, 0, 0)`;
+
+    count.textContent = `${index + 1} / ${total}`;
+
     prev.disabled = index === 0;
-    next.disabled = index === cards.length - 1;
+    next.disabled = index === total - 1;
   }
-  prev.addEventListener('click', () => showCard(index - 1));
-  next.addEventListener('click', () => showCard(index + 1));
+
+  prev.addEventListener('click', () => {
+    showCard(index - 1);
+  });
+
+  next.addEventListener('click', () => {
+    showCard(index + 1);
+  });
+
+  /* スマホのスワイプ */
+
   track.addEventListener('touchstart', (event) => {
     if (!event.touches.length) return;
+
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
     dragging = true;
   }, { passive: true });
+
   track.addEventListener('touchend', (event) => {
     if (!dragging || !event.changedTouches.length) return;
-    const dx = event.changedTouches[0].clientX - startX;
-    const dy = event.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      showCard(index + (dx < 0 ? 1 : -1));
+
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+
+    const dx = endX - startX;
+    const dy = endY - startY;
+
+    if (
+      Math.abs(dx) > 45 &&
+      Math.abs(dx) > Math.abs(dy) * 1.2
+    ) {
+      if (dx < 0) {
+        showCard(index + 1);
+      } else {
+        showCard(index - 1);
+      }
     }
+
     dragging = false;
   }, { passive: true });
+
+  /* キーボード操作 */
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      showCard(index - 1);
+    }
+
+    if (event.key === 'ArrowRight') {
+      showCard(index + 1);
+    }
+  });
+
+  /* 初期表示 */
+
   showCard(0);
 })();
 </script>
