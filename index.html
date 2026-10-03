@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="愛媛県今治市大三島・盛地区に伝わる「盛の祭」を知るための小さな案内。祭り、神輿、獅子舞、地域の歴史や役割を紹介します。"
+    content="愛媛県今治市大三島・盛地域に受け継がれてきた「盛の祭」。神輿や獅子舞、祭りに関わる人々や地域のつながりについて紹介します。"
   >
 
   <link rel="stylesheet" href="style.css">
@@ -16,41 +16,46 @@
 
 <body>
 
+  <!-- HERO -->
   <header class="hero">
 
-    <p class="eyebrow">EHIME / OMISHIMA / SAKARI</p>
+    <p class="eyebrow">OMISHIMA / SAKARI</p>
 
     <h1>盛の祭を知る</h1>
 
     <p class="subtitle">
-      地域に伝わる祭りと、そこに込められたもの
+      地域に受け継がれてきた祭りと、そこにある風景
+    </p>
+
+    <p class="lead">
+      神輿、獅子舞、そして祭りに関わる人たち。<br>
+      「盛の祭」を少しずつ知ってみませんか。
     </p>
 
     <div class="hero-illustration">
-      <img
-        src="illustration-01.jpg"
-        alt="盛の祭をイメージしたイラスト"
-      >
+      <img src="illustration-01.jpg" alt="盛の祭をイメージしたイラスト">
     </div>
 
   </header>
 
 
+  <!-- CARDS -->
   <main class="cards">
 
     <div class="slider-wrap">
 
       <button
-        class="slide-button prev"
+        class="slide-button"
+        id="prevButton"
         type="button"
-        aria-label="前のページ"
+        aria-label="前のカード"
       >
         ◁
       </button>
 
       <div class="cards-viewport">
 
-        <div class="card-track">
+        <div class="card-track" id="cardTrack">
 
 
           <!-- 01 -->
@@ -61,30 +66,25 @@
             <h2>そもそも「祭」とは？</h2>
 
             <p>
-              「祭り」と聞くと、神輿や獅子舞、屋台などを思い浮かべるかもしれません。
+              「祭り」と聞くと、神輿や獅子舞、屋台などを思い浮かべる人も多いかもしれません。
             </p>
 
             <p>
-              もともと祭りは、<strong>神さまを迎え、祈り、感謝するための行事</strong>でした。
+              でも、祭りはただのイベントではありません。
             </p>
 
             <p>
-              豊作や豊漁、家族や地域の安全などを願い、<br>
-              神さまにお供えをしたり、神輿を出したり、舞を奉納したりします。
+              もともとは、神さまをお迎えし、感謝を伝えたり、地域の人々の願いを届けたりする大切な行いでした。
             </p>
 
             <p>
-              そして、祭りは神さまのためだけのものではありません。
+              地域によって、行われる時期や内容、登場するものはさまざまです。
             </p>
 
-            <p>
-              地域の人たちが集まり、同じ時間を過ごし、<br>
-              一緒に行事を行うことで、<strong>人と人とのつながり</strong>も生まれます。
-            </p>
-
-            <p class="question">
-              では、盛では<br>
-              どんな祭りが行われているのでしょう？
+            <p class="key">
+              祭りは、地域の人たちが<br>
+              神さまとつながり、<br>
+              人と人がつながる場でもあります。
             </p>
 
           </article>
@@ -97,42 +97,40 @@
 
             <h2>祭りには、どんな役割があるの？</h2>
 
-            <p>
-              祭りには、いくつかの大切な役割があります。
-            </p>
-
             <div class="two-column">
 
               <div>
-                <span class="label">祈り</span>
-                <strong>神さまに願い、感謝する</strong>
+                <span class="label">祈り・感謝</span>
+                <p>
+                  神さまに日々の無事や豊作などを願い、感謝を伝えます。
+                </p>
               </div>
 
               <div>
-                <span class="label">つながり</span>
-                <strong>地域の人たちが集まる</strong>
+                <span class="label">地域のつながり</span>
+                <p>
+                  地域の人たちが集まり、一緒に祭りをつくります。
+                </p>
               </div>
 
               <div>
-                <span class="label">文化</span>
-                <strong>昔からの習わしを伝える</strong>
+                <span class="label">受け継ぐ</span>
+                <p>
+                  昔から伝わる舞や作法、道具などを次の世代へ伝えます。
+                </p>
               </div>
 
               <div>
-                <span class="label">継承</span>
-                <strong>次の世代へ受け継ぐ</strong>
+                <span class="label">楽しむ</span>
+                <p>
+                  地域の人たちが集まり、祭りの日を楽しみます。
+                </p>
               </div>
 
             </div>
 
-            <p>
-              祭りは、その地域で暮らす人たちが、<br>
-              長い時間をかけて大切にしてきたものでもあります。
-            </p>
-
             <p class="question">
-              ただ「昔から続いている行事」ではなく、<br>
-              今を生きる人たちにもつながっているのです。
+              祭りには、いろいろな意味が重なっています。
             </p>
 
           </article>
@@ -146,35 +144,24 @@
             <h2>神輿って何？</h2>
 
             <p>
-              <strong>神輿（みこし）</strong>は、神さまが乗るとされる乗り物です。
+              神輿（みこし）は、神さまを乗せて地域を巡るものです。
             </p>
 
             <p>
-              お祭りでは、神社にいる神さまを神輿へお遷しし、<br>
-              神輿を担いで地域を巡ります。
+              祭りでは、神社から神輿が出て、地域の中を巡ります。
             </p>
 
             <p>
-              神さまが神社の外へ出て、<br>
-              地域の人々や土地を見守るという意味があります。
+              神輿が地域を巡ることで、神さまが地域の人々の暮らしの中を訪れることになります。
             </p>
 
             <p>
-              神輿が訪れる家では、神さまをお迎えします。
-            </p>
-
-            <p>
-              地域によって、その迎え方や習わしはさまざまです。
+              そして、祭りが終わると神輿は神社へ戻ります。
             </p>
 
             <p class="key">
               神輿は、<br>
-              神社と地域をつなぐもの。
-            </p>
-
-            <p class="question">
-              では、神輿と一緒に登場する<br>
-              「獅子舞」には、どんな意味があるのでしょう？
+              神社と地域をつなぐ存在でもあります。
             </p>
 
           </article>
@@ -188,31 +175,25 @@
             <h2>獅子舞って何？</h2>
 
             <p>
-              獅子舞は、獅子の姿をしたものが舞う、日本各地に伝わる伝統芸能です。
+              獅子舞は、獅子に扮した人が舞う伝統芸能です。
             </p>
 
             <p>
-              獅子は、実際の動物のライオンそのものではなく、<br>
-              <strong>想像上の動物</strong>として表現されています。
+              獅子は、実際の動物ではなく、想像上の獅子を表しています。
             </p>
 
             <p>
-              地域によって、獅子の姿や舞い方、音楽、登場する役なども異なります。
+              地域によって獅子の姿や舞い方、登場する人や道具なども違います。
             </p>
 
             <p>
-              盛の獅子舞も、地域に伝わる独自の形を持っています。
+              盛の祭でも、獅子だけではなく、さまざまな役の人たちが登場します。
             </p>
 
-            <p>
-              盛獅子は<strong>メス</strong>。<br>
-              そして、獅子舞は<strong>2人</strong>で入っています。
-            </p>
-
-            <p>
-              獅子だけを見るのではなく、<br>
-              周りで動く人たちや、太鼓、笛の音にも注目してみると、<br>
-              さらに面白く見えてきます。
+            <p class="key">
+              獅子舞は、<br>
+              舞う人、音を奏でる人、<br>
+              それを支える人たちによって成り立っています。
             </p>
 
           </article>
@@ -299,8 +280,7 @@
             </div>
 
             <p>
-              盛では、神輿が家に来た際に
-              <strong>お神酒をいただく</strong>という習わしもあります。
+              盛では、神輿が家に来た際に<strong>お神酒をいただく</strong>という習わしもあります。
             </p>
 
             <p>
@@ -334,12 +314,14 @@
               獅子舞の中でそれぞれの役割を担っています。
             </p>
 
+
             <h3>奴</h3>
 
             <p>
               黒い法被を着て、毛槍を持って登場します。<br>
               祭の行列を先導するような役です。
             </p>
+
 
             <h3>獅子止め（いこく）</h3>
 
@@ -348,12 +330,14 @@
               獅子の前で動き、鈴を鳴らしながら獅子を操るように見える動きが特徴です。
             </p>
 
+
             <h3>めんまい</h3>
 
             <p>
               白い白衣に赤い袴を着て、花笠をかぶって登場します。<br>
               竹を背負い、獅子の後ろを歩きます。
             </p>
+
 
             <h3>さる</h3>
 
@@ -394,6 +378,7 @@
               いくつもの決まりや場面があります。
             </p>
 
+
             <h3>太鼓</h3>
 
             <p>
@@ -408,6 +393,7 @@
             <p>
               同じ太鼓でも、ばちの太さが違います。
             </p>
+
 
             <h3>篠笛</h3>
 
@@ -428,42 +414,42 @@
           </article>
 
 
-<!-- 09 -->
-<article class="card">
+          <!-- 09 -->
+          <article class="card">
 
-  <span class="number">09</span>
+            <span class="number">09</span>
 
-  <h2>宿舞・御旅所</h2>
+            <h2>宿舞・御旅所</h2>
 
-  <h3>【宿舞】</h3>
 
-  <p>
-    神輿や獅子舞は、地域の中にある<strong>「宿」</strong>でも舞います。
-  </p>
+            <h3>【宿舞】</h3>
 
-  <p>
-    宿は、お祭りで神輿や行列を迎える大切な場所です。
-  </p>
+            <p>
+              宿とは、祭りに関わる人を迎える大切な場所です。<br>
+              そこで舞うのが「宿舞」です。
+            </p>
 
-  <h3>【御旅所】</h3>
 
-  <p>
-    神輿は途中で<strong>「御旅所（おたびしょ）」</strong>に立ち寄ります。
-  </p>
+            <h3>【御旅所】</h3>
 
-  <p>
-    御旅所は、神さまに途中で休んでいただく場所です。
-  </p>
+            <p>
+              神輿は途中で<strong>「御旅所（おたびしょ）」</strong>に立ち寄ります。
+            </p>
 
-  <p>
-    神輿が地域を巡り、人々が迎え、舞が奉納され、また次の場所へ進んでいきます。
-  </p>
+            <p>
+              御旅所は、神さまに途中で休んでいただく場所です。
+            </p>
 
-  <p>
-    こうした場面がつながって、盛の祭になっています。
-  </p>
+            <p>
+              神輿が地域を巡り、人々が迎え、舞が奉納され、また次の場所へ進んでいきます。
+            </p>
 
-</article>
+            <p>
+              こうした場面がつながって、盛の祭になっています。
+            </p>
+
+          </article>
+
 
           <!-- 10 -->
           <article class="card">
@@ -563,28 +549,29 @@
         </div>
       </div>
 
+
       <button
-        class="slide-button next"
+        class="slide-button"
+        id="nextButton"
         type="button"
-        aria-label="次のページ"
+        aria-label="次のカード"
       >
         ▷
       </button>
 
     </div>
 
-    <div class="slide-count">
-      <span class="current-slide">1</span> / <span class="total-slide">11</span>
+
+    <div class="slide-count" id="slideCount">
+      1 / 11
     </div>
 
   </main>
 
 
+  <!-- FOOTER IMAGE -->
   <div class="footer-illustration">
-    <img
-      src="illustration-02.jpg"
-      alt="盛の祭をイメージしたイラスト"
-    >
+    <img src="illustration-02.jpg" alt="盛の祭をイメージしたイラスト">
   </div>
 
 
@@ -593,43 +580,56 @@
   </footer>
 
 
+  <!-- SLIDER SCRIPT -->
   <script>
-    const track = document.querySelector(".card-track");
-    const cards = Array.from(document.querySelectorAll(".card"));
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-    const currentSlide = document.querySelector(".current-slide");
-    const totalSlide = document.querySelector(".total-slide");
+
+    const track = document.getElementById("cardTrack");
+    const cards = Array.from(track.querySelectorAll(".card"));
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const slideCount = document.getElementById("slideCount");
 
     let currentIndex = 0;
 
-    totalSlide.textContent = cards.length;
-
     function updateSlider() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      currentSlide.textContent = currentIndex + 1;
+      const width = track.parentElement.clientWidth;
+
+      track.style.transform =
+        `translateX(-${currentIndex * width}px)`;
+
+      slideCount.textContent =
+        `${currentIndex + 1} / ${cards.length}`;
 
       prevButton.disabled = currentIndex === 0;
       nextButton.disabled = currentIndex === cards.length - 1;
     }
 
-    prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
 
     nextButton.addEventListener("click", () => {
+
       if (currentIndex < cards.length - 1) {
         currentIndex++;
         updateSlider();
       }
+
     });
 
 
-    /* スワイプ操作 */
+    prevButton.addEventListener("click", () => {
+
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+
+    });
+
+
+    window.addEventListener("resize", updateSlider);
+
+
+    /* touch swipe */
 
     let startX = 0;
     let startY = 0;
@@ -637,25 +637,35 @@
     track.addEventListener(
       "touchstart",
       (event) => {
-        const touch = event.touches[0];
+
+        const touch = event.changedTouches[0];
 
         startX = touch.clientX;
         startY = touch.clientY;
+
       },
       { passive: true }
     );
 
+
     track.addEventListener(
       "touchend",
       (event) => {
+
         const touch = event.changedTouches[0];
 
         const diffX = touch.clientX - startX;
         const diffY = touch.clientY - startY;
 
-        if (Math.abs(diffX) < 40) return;
+        /* 縦スクロールを邪魔しない */
+        if (Math.abs(diffX) < Math.abs(diffY)) {
+          return;
+        }
 
-        if (Math.abs(diffX) <= Math.abs(diffY)) return;
+        /* 小さな動きは無視 */
+        if (Math.abs(diffX) < 40) {
+          return;
+        }
 
         if (diffX < 0 && currentIndex < cards.length - 1) {
           currentIndex++;
@@ -666,12 +676,14 @@
         }
 
         updateSlider();
+
       },
       { passive: true }
     );
 
 
     updateSlider();
+
   </script>
 
 </body>
