@@ -159,16 +159,16 @@ h1{
   cursor:pointer;
   box-shadow:0 2px 8px rgba(40,35,25,.08);
   transition:background .2s, opacity .2s, transform .2s;
-  transform:translateY(-25px);
+  transform:translateY(-35px);
 }
 
 .slide-button:hover:not(:disabled){
   background:#f4f0df;
-  transform:translateY(-25px) scale(1.04);
+  transform:translateY(-35px) scale(1.04);
 }
 
 .slide-button:active:not(:disabled){
-  transform:translateY(-25px) scale(.96);
+  transform:translateY(-35px) scale(.96);
 }
 
 .slide-button:disabled{
