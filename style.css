@@ -1,9 +1,6 @@
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 :root{
-  --paper:#f7f5ef;
+  --paper:#d4cfa1;
   --card:#fffdf8;
   --ink:#282725;
   --muted:#77736b;
@@ -11,11 +8,7 @@
   --orange:#d99657;
   --blue:#8fb8bb;
 }
-
-html{
-  scroll-behavior:smooth;
-}
-
+html{scroll-behavior:smooth}
 body{
   margin:0;
   background:var(--paper);
@@ -23,223 +16,69 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;
   line-height:1.95;
 }
-
-
-/* =========================
-   ヘッダー
-   ========================= */
-
 .hero{
-  max-width:800px;
+  width:100%;
   margin:0 auto;
-  padding:78px 24px 54px;
+  padding:30px 0 0;
   text-align:center;
+  background:#fff;
 }
-
+.hero .eyebrow,
+.hero h1,
+.hero .subtitle,
+.hero .lead{
+  margin-left:24px;
+  margin-right:24px;
+}
+.hero-illustration{
+  width:100%;
+  margin:22px 0 0;
+  line-height:0;
+  overflow:hidden;
+}
+.hero-illustration img{
+  display:block;
+  width:100%;
+  height:auto;
+}
 .eyebrow{
   margin:0 0 18px;
   color:var(--muted);
   font-size:11px;
   letter-spacing:.18em;
 }
-
-h1,
-h2{
+h1,h2{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-weight:600;
 }
-
 h1{
   margin:0 0 10px;
   font-size:clamp(36px,8vw,60px);
   letter-spacing:.09em;
 }
-
 .subtitle{
   margin:0 0 27px;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:clamp(15px,3.5vw,21px);
 }
-
 .lead{
   margin:0;
   color:var(--muted);
   font-size:14px;
 }
-
-
-/* =========================
-   カード
-   ========================= */
-
 .cards{
   width:min(820px,calc(100% - 28px));
   margin:0 auto;
-  padding-bottom:70px;
+  padding:32px 0 70px;
 }
-
-.card-area{
-  display:grid;
-  grid-template-columns:40px minmax(0,1fr) 40px;
-  align-items:center;
-  gap:10px;
-}
-
-.card-stage{
-  position:relative;
-  overflow:hidden;
-  width:100%;
-}
-
-
-/* =========================
-   カード本体
-   ========================= */
-
 .card{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
   padding:clamp(28px,6vw,52px);
-  margin:0;
+  margin-bottom:26px;
   box-shadow:0 7px 25px rgba(40,35,25,.045);
-
-  display:none;
-  position:relative;
-  width:100%;
-
-  cursor:pointer;
-  user-select:none;
-  -webkit-tap-highlight-color:transparent;
 }
-
-.card.active{
-  display:block;
-}
-
-
-/* =========================
-   次へ進むスライド
-   ========================= */
-
-.card.next{
-  display:block;
-  position:absolute;
-  top:0;
-  left:0;
-  transform:translateX(100%);
-}
-
-.card.next.active{
-  animation:slideInNext .5s ease forwards;
-}
-
-.card.prev{
-  animation:slideOutPrev .5s ease forwards;
-}
-
-@keyframes slideInNext{
-
-  from{
-    opacity:0;
-    transform:translateX(100%);
-  }
-
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-
-}
-
-@keyframes slideOutPrev{
-
-  from{
-    opacity:1;
-    transform:translateX(0);
-  }
-
-  to{
-    opacity:0;
-    transform:translateX(-100%);
-  }
-
-}
-
-
-/* =========================
-   前へ戻るスライド
-   ========================= */
-
-.card.next.back{
-  transform:translateX(-100%);
-}
-
-.card.next.back.active{
-  animation:slideInPrev .5s ease forwards;
-}
-
-.card.prev.back{
-  animation:slideOutNext .5s ease forwards;
-}
-
-@keyframes slideInPrev{
-
-  from{
-    opacity:0;
-    transform:translateX(-100%);
-  }
-
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-
-}
-
-@keyframes slideOutNext{
-
-  from{
-    opacity:1;
-    transform:translateX(0);
-  }
-
-  to{
-    opacity:0;
-    transform:translateX(100%);
-  }
-
-}
-
-
-/* =========================
-   カードナビゲーション
-   ========================= */
-
-.card-nav{
-  border:0;
-  background:none;
-  color:var(--muted);
-  font-size:24px;
-  padding:10px 2px;
-  cursor:pointer;
-  opacity:.65;
-  transition:opacity .2s ease;
-}
-
-.card-nav:hover{
-  opacity:1;
-}
-
-.card-nav:active{
-  transform:scale(.9);
-}
-
-
-/* =========================
-   カード内
-   ========================= */
-
 .number{
   display:block;
   color:var(--orange);
@@ -247,73 +86,41 @@ h1{
   letter-spacing:.18em;
   margin-bottom:10px;
 }
-
 h2{
   margin:0 0 28px;
   font-size:clamp(23px,5vw,32px);
   line-height:1.55;
 }
-
 h3{
   margin:25px 0 5px;
   font-size:15px;
   color:#57534c;
 }
-
 p{
   margin:0 0 17px;
   font-size:15px;
 }
-
-strong{
-  font-weight:600;
-}
-
-
-/* =========================
-   強調テキスト
-   ========================= */
-
+strong{font-weight:600}
 .key{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
-  font-size:18px;
-  font-weight:600;
+  font-size:17px;
   line-height:1.9;
-  letter-spacing:.04em;
-  color:#b8753f;
 }
-
-
-/* =========================
-   リスト
-   ========================= */
-
 ul{
   margin:0 0 18px;
   padding-left:1.35em;
 }
-
-li{
-  margin-bottom:10px;
-}
-
-
-/* =========================
-   2カラム
-   ========================= */
-
+li{margin-bottom:10px}
 .two-column{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
   margin-bottom:25px;
 }
-
 .two-column>div{
   border-top:2px solid var(--blue);
   padding:17px 2px 0;
 }
-
 .label{
   display:block;
   margin-bottom:7px;
@@ -321,17 +128,10 @@ li{
   font-size:12px;
   letter-spacing:.12em;
 }
-
-
-/* =========================
-   流れ
-   ========================= */
-
 .flow{
   border-top:1px solid var(--line);
   margin:8px 0 28px;
 }
-
 .flow>div{
   display:grid;
   grid-template-columns:145px 1fr;
@@ -339,161 +139,66 @@ li{
   padding:16px 0;
   border-bottom:1px solid var(--line);
 }
-
-.flow b{
-  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
-}
-
-.flow span{
-  font-size:14px;
-  color:var(--muted);
-}
-
-
-/* =========================
-   役割
-   ========================= */
-
+.flow b{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif}
+.flow span{font-size:14px;color:var(--muted)}
 .roles{
   padding:17px 10px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
-
   font-size:16px;
   line-height:2.2;
 }
-
-
-/* =========================
-   質問
-   ========================= */
-
 .question{
   margin-top:27px;
-
   color:#5f756f;
-
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
-
   font-size:16px;
 }
-
-
-/* =========================
-   用語
-   ========================= */
-
 .terms{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
   margin:28px 0;
 }
-
 .terms span{
   padding:8px 18px;
-
   border:1px solid var(--line);
   border-radius:99px;
-
   background:#fbfaf5;
-
   font-size:14px;
 }
-
-
-/* =========================
-   注記
-   ========================= */
-
 .note{
   margin:24px 0;
   padding:15px 17px;
-
   border-left:3px solid var(--blue);
-
   background:#f5f6f1;
-
   font-size:13px;
 }
-
-
-/* =========================
-   最後のカード
-   ========================= */
-
 .final{
   padding-bottom:58px;
 }
-
 .final .key:last-child{
   margin-top:28px;
 }
-
-
-/* =========================
-   フッター
-   ========================= */
-
 footer{
   padding:32px 20px 45px;
-
   text-align:center;
-
   color:var(--muted);
-
   font-size:10px;
   letter-spacing:.12em;
 }
-
-
-/* =========================
-   スマートフォン
-   ========================= */
-
 @media(max-width:600px){
-
-  .hero{
-    padding:60px 20px 44px;
-  }
-
-  .cards{
-    width:calc(100% - 20px);
-  }
-
-  .card-area{
-    grid-template-columns:28px minmax(0,1fr) 28px;
-    gap:3px;
-  }
-
-  .card{
-    padding:27px 23px;
-    border-radius:15px;
-  }
-
-  .card-nav{
-    font-size:20px;
-    padding:12px 2px;
-  }
-
-  .two-column{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-
-  .flow>div{
-    grid-template-columns:1fr;
-    gap:3px;
-  }
-
-  p{
-    font-size:14px;
-  }
-
-  .key{
-    font-size:16px;
-  }
-
+  .hero{padding:28px 0 0}
+  .hero .eyebrow,
+  .hero h1,
+  .hero .subtitle,
+  .hero .lead{margin-left:18px;margin-right:18px}
+  .hero-illustration{margin-top:18px}
+  .cards{width:calc(100% - 20px)}
+  .card{padding:27px 23px;border-radius:15px}
+  .two-column{grid-template-columns:1fr;gap:10px}
+  .flow>div{grid-template-columns:1fr;gap:3px}
+  p{font-size:14px}
+  .key{font-size:16px}
 }
