@@ -97,7 +97,7 @@ h1{
 .cards{
   width:min(900px,calc(100% - 28px));
   margin:0 auto;
-  padding:30px 0 64px;
+  padding:30px 0 25px;
 }
 
 .slider-wrap{
@@ -409,7 +409,7 @@ footer{
   .cards{
     width:calc(100% - 20px);
     padding-top:26px;
-    padding-bottom:56px;
+    padding-bottom:25px;
   }
 
   .slider-wrap{
