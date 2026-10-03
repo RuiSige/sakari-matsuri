@@ -78,7 +78,7 @@ h1{
 }
 
 .subtitle{
-  margin:0 0 24px;
+  margin:0 0 15px;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:clamp(15px,3.5vw,21px);
 }
