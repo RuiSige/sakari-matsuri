@@ -209,6 +209,7 @@
 <footer>盛の祭を知る　｜　SAKARI FESTIVAL GUIDE</footer>
 <script>
 (() => {
+  const viewport = document.querySelector('.cards');
   const track = document.querySelector('.card-track');
   const cards = Array.from(track.querySelectorAll('.card'));
   const prev = document.querySelector('.slide-button.prev');
@@ -222,15 +223,17 @@
 
   const total = cards.length;
 
-  function showCard(newIndex) {
+  function showCard(newIndex, animate = true) {
     index = Math.max(0, Math.min(total - 1, newIndex));
 
-    /*
-      カード1枚分ずつ横へ移動
-    */
-    const move = index * 100;
+    const width = viewport.clientWidth;
 
-    track.style.transform = `translate3d(-${move}%, 0, 0)`;
+    track.style.transition = animate
+      ? 'transform .42s ease'
+      : 'none';
+
+    track.style.transform =
+      `translate3d(-${index * width}px, 0, 0)`;
 
     count.textContent = `${index + 1} / ${total}`;
 
@@ -238,16 +241,17 @@
     next.disabled = index === total - 1;
   }
 
+  /* 前へ */
   prev.addEventListener('click', () => {
     showCard(index - 1);
   });
 
+  /* 次へ */
   next.addEventListener('click', () => {
     showCard(index + 1);
   });
 
-  /* スマホのスワイプ */
-
+  /* スマホ：スワイプ開始 */
   track.addEventListener('touchstart', (event) => {
     if (!event.touches.length) return;
 
@@ -256,6 +260,7 @@
     dragging = true;
   }, { passive: true });
 
+  /* スマホ：スワイプ終了 */
   track.addEventListener('touchend', (event) => {
     if (!dragging || !event.changedTouches.length) return;
 
@@ -279,8 +284,7 @@
     dragging = false;
   }, { passive: true });
 
-  /* キーボード操作 */
-
+  /* キーボード */
   document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
       showCard(index - 1);
@@ -291,10 +295,15 @@
     }
   });
 
-  /* 初期表示 */
+  /* 画面サイズ変更時 */
+  window.addEventListener('resize', () => {
+    showCard(index, false);
+  });
 
-  showCard(0);
+  /* 初期表示 */
+  showCard(0, false);
 })();
 </script>
+
 </body>
 </html>
