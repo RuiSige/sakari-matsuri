@@ -223,10 +223,25 @@
 
   const total = cards.length;
 
-  function showCard(newIndex, animate = true) {
-    index = Math.max(0, Math.min(total - 1, newIndex));
-
+  function setup() {
     const width = viewport.clientWidth;
+
+    /* トラック全体を14枚分の幅にする */
+    track.style.width = `${width * total}px`;
+
+    /* 1枚ずつ、表示領域と同じ幅にする */
+    cards.forEach(card => {
+      card.style.width = `${width}px`;
+      card.style.flex = `0 0 ${width}px`;
+    });
+
+    move(false);
+  }
+
+  function move(animate = true) {
+    const width = viewport.clientWidth;
+
+    index = Math.max(0, Math.min(total - 1, index));
 
     track.style.transition = animate
       ? 'transform .42s ease'
@@ -241,18 +256,22 @@
     next.disabled = index === total - 1;
   }
 
-  /* 前へ */
+  function showCard(newIndex) {
+    index = newIndex;
+    move(true);
+  }
+
+  /* ボタン */
   prev.addEventListener('click', () => {
     showCard(index - 1);
   });
 
-  /* 次へ */
   next.addEventListener('click', () => {
     showCard(index + 1);
   });
 
-  /* スマホ：スワイプ開始 */
-  track.addEventListener('touchstart', (event) => {
+  /* スワイプ */
+  track.addEventListener('touchstart', event => {
     if (!event.touches.length) return;
 
     startX = event.touches[0].clientX;
@@ -260,8 +279,7 @@
     dragging = true;
   }, { passive: true });
 
-  /* スマホ：スワイプ終了 */
-  track.addEventListener('touchend', (event) => {
+  track.addEventListener('touchend', event => {
     if (!dragging || !event.changedTouches.length) return;
 
     const endX = event.changedTouches[0].clientX;
@@ -285,7 +303,7 @@
   }, { passive: true });
 
   /* キーボード */
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') {
       showCard(index - 1);
     }
@@ -295,13 +313,13 @@
     }
   });
 
-  /* 画面サイズ変更時 */
+  /* 画面サイズ変更 */
   window.addEventListener('resize', () => {
-    showCard(index, false);
+    setup();
   });
 
-  /* 初期表示 */
-  showCard(0, false);
+  /* 初期化 */
+  setup();
 })();
 </script>
 
