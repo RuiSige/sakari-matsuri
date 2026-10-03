@@ -19,7 +19,8 @@
 </header>
 
 <main>
-<section class="cards">
+<section class="cards" aria-label="盛の祭の解説カード">
+<div class="card-track">
 
 <article class="card">
 <span class="number">01</span>
@@ -196,9 +197,54 @@
 <p class="key">それもまた、祭りの大切な役割の一つです。</p>
 </article>
 
+</div>
+<div class="slider-controls" aria-label="カードの操作">
+  <button class="slide-button prev" type="button" aria-label="前のカード">◁</button>
+  <span class="slide-count" aria-live="polite">1 / 14</span>
+  <button class="slide-button next" type="button" aria-label="次のカード">▷</button>
+</div>
 </section>
 </main>
 
 <footer>盛の祭を知る　｜　SAKARI FESTIVAL GUIDE</footer>
+<script>
+(() => {
+  const track = document.querySelector('.card-track');
+  const cards = Array.from(track.querySelectorAll('.card'));
+  const prev = document.querySelector('.slide-button.prev');
+  const next = document.querySelector('.slide-button.next');
+  const count = document.querySelector('.slide-count');
+  let index = 0;
+  let startX = 0;
+  let startY = 0;
+  let dragging = false;
+
+  function showCard(nextIndex) {
+    index = Math.max(0, Math.min(cards.length - 1, nextIndex));
+    track.style.transform = `translateX(-${index * 100}%)`;
+    count.textContent = `${index + 1} / ${cards.length}`;
+    prev.disabled = index === 0;
+    next.disabled = index === cards.length - 1;
+  }
+  prev.addEventListener('click', () => showCard(index - 1));
+  next.addEventListener('click', () => showCard(index + 1));
+  track.addEventListener('touchstart', (event) => {
+    if (!event.touches.length) return;
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+    dragging = true;
+  }, { passive: true });
+  track.addEventListener('touchend', (event) => {
+    if (!dragging || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - startX;
+    const dy = event.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      showCard(index + (dx < 0 ? 1 : -1));
+    }
+    dragging = false;
+  }, { passive: true });
+  showCard(0);
+})();
+</script>
 </body>
 </html>
