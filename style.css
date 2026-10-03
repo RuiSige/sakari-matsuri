@@ -91,39 +91,25 @@ CARD SLIDER
 ========================= */
 
 .cards{
-width:min(820px,calc(100% - 28px));
-margin:0 auto;
-padding:32px 0 70px;
-overflow:hidden;
+  width:min(820px,calc(100% - 28px));
+  margin:0 auto;
+  padding:32px 0 70px;
+  overflow:hidden;
 }
-
-/*
-14枚のカードを横一列に並べる。
-JavaScriptのtranslateX(-100%)、
-translateX(-200%)……に対応。
-*/
 
 .card-track{
-display:flex;
-width:100%;
-transition:transform .42s ease;
-will-change:transform;
-
-/* 縦スクロールはブラウザに任せ、
-横スワイプをJavaScriptで処理 */
-touch-action:pan-y;
+  display:flex;
+  width:100%;
+  transition:transform .42s ease;
+  will-change:transform;
+  touch-action:pan-y;
 }
 
-/*
-1枚のカードが必ず表示領域いっぱいになる。
-flex: 0 0 100% が横スライドの重要部分。
-*/
-
 .card-track > .card{
-flex:0 0 100%;
-width:100%;
-min-width:100%;
-margin:0;
+  flex:0 0 100%;
+  width:100%;
+  min-width:100%;
+  margin:0;
 }
 
 /* =========================
