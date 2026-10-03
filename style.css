@@ -91,16 +91,37 @@ h1{
 
 
 /* =========================
-   SLIDER AREA
+   SLIDER
 ========================= */
 
 .cards{
-  position:relative;
-  width:min(820px,calc(100% - 28px));
+  width:min(900px,calc(100% - 28px));
   margin:0 auto;
   padding:32px 0 70px;
+}
+
+
+/*
+  ◁　カード　▷
+*/
+
+.slider-wrap{
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr) 48px;
+  align-items:center;
+  column-gap:10px;
+}
+
+
+/* カードを隠す窓 */
+
+.cards-viewport{
+  width:100%;
   overflow:hidden;
 }
+
+
+/* 横に並ぶカード */
 
 .card-track{
   display:flex;
@@ -111,6 +132,9 @@ h1{
   touch-action:pan-y;
 }
 
+
+/* 1枚のカード */
+
 .card-track > .card{
   flex:0 0 auto;
   width:100%;
@@ -120,58 +144,64 @@ h1{
 
 
 /* =========================
-   SLIDER CONTROLS
+   SLIDER BUTTON
 ========================= */
 
-.slider-controls{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
 .slide-button{
-  pointer-events:auto;
   display:grid;
   place-items:center;
+
   width:42px;
   height:42px;
+
+  padding:0;
+
   border:1px solid #bcb58a;
   border-radius:50%;
+
   background:#fffdf8;
   color:var(--ink);
-  font:inherit;
+
+  font-family:inherit;
+  font-size:18px;
+  line-height:1;
+
   cursor:pointer;
-  transition:background .2s,opacity .2s;
-  box-shadow:0 2px 8px rgba(40,35,25,.08);
-}
 
-.slide-button.prev{
-  transform:translateX(-21px);
-}
+  box-shadow:
+    0 2px 8px rgba(40,35,25,.08);
 
-.slide-button.next{
-  transform:translateX(21px);
+  transition:
+    background .2s,
+    opacity .2s,
+    transform .2s;
 }
 
 .slide-button:hover:not(:disabled){
   background:#f4f0df;
+  transform:scale(1.04);
+}
+
+.slide-button:active:not(:disabled){
+  transform:scale(.96);
 }
 
 .slide-button:disabled{
-  opacity:.3;
+  opacity:.28;
   cursor:default;
 }
 
+
+/* カード番号 */
+
 .slide-count{
-  position:absolute;
-  left:50%;
-  bottom:-42px;
-  transform:translateX(-50%);
+  margin-top:16px;
+
+  text-align:center;
+
   font-size:12px;
   color:#5e5a49;
+
   font-variant-numeric:tabular-nums;
 }
 
@@ -182,35 +212,47 @@ h1{
 
 .card{
   background:var(--card);
+
   border:1px solid var(--line);
   border-radius:18px;
+
   padding:clamp(28px,6vw,52px);
-  margin-bottom:26px;
-  box-shadow:0 7px 25px rgba(40,35,25,.045);
+
+  margin-bottom:0;
+
+  box-shadow:
+    0 7px 25px rgba(40,35,25,.045);
 }
 
 .number{
   display:block;
+
   color:var(--orange);
+
   font-size:12px;
   letter-spacing:.18em;
+
   margin-bottom:10px;
 }
 
 h2{
   margin:0 0 28px;
+
   font-size:clamp(23px,5vw,32px);
+
   line-height:1.55;
 }
 
 h3{
   margin:25px 0 5px;
+
   font-size:15px;
   color:#57534c;
 }
 
 p{
   margin:0 0 17px;
+
   font-size:15px;
 }
 
@@ -219,7 +261,12 @@ strong{
 }
 
 .key{
-  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP",
+    serif;
+
   font-size:17px;
   line-height:1.9;
 }
@@ -240,20 +287,27 @@ li{
 
 .two-column{
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:18px;
+
   margin-bottom:25px;
 }
 
 .two-column > div{
   border-top:2px solid var(--blue);
+
   padding:17px 2px 0;
 }
 
 .label{
   display:block;
+
   margin-bottom:7px;
+
   color:var(--muted);
+
   font-size:12px;
   letter-spacing:.12em;
 }
@@ -265,23 +319,33 @@ li{
 
 .flow{
   border-top:1px solid var(--line);
+
   margin:8px 0 28px;
 }
 
 .flow > div{
   display:grid;
+
   grid-template-columns:145px 1fr;
+
   gap:16px;
+
   padding:16px 0;
+
   border-bottom:1px solid var(--line);
 }
 
 .flow b{
-  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP",
+    serif;
 }
 
 .flow span{
   font-size:14px;
+
   color:var(--muted);
 }
 
@@ -292,17 +356,31 @@ li{
 
 .roles{
   padding:17px 10px;
+
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP",
+    serif;
+
   font-size:16px;
   line-height:2.2;
 }
 
 .question{
   margin-top:27px;
+
   color:#5f756f;
-  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP",
+    serif;
+
   font-size:16px;
 }
 
@@ -313,16 +391,22 @@ li{
 
 .terms{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:10px;
+
   margin:28px 0;
 }
 
 .terms span{
   padding:8px 18px;
+
   border:1px solid var(--line);
   border-radius:99px;
+
   background:#fbfaf5;
+
   font-size:14px;
 }
 
@@ -333,15 +417,19 @@ li{
 
 .note{
   margin:24px 0;
+
   padding:15px 17px;
+
   border-left:3px solid var(--blue);
+
   background:#f5f6f1;
+
   font-size:13px;
 }
 
 
 /* =========================
-   FINAL CARD
+   FINAL
 ========================= */
 
 .final{
@@ -359,9 +447,13 @@ li{
 
 footer{
   padding:32px 20px 45px;
+
   text-align:center;
+
   color:var(--muted);
+
   font-size:10px;
+
   letter-spacing:.12em;
 }
 
@@ -388,45 +480,76 @@ footer{
     margin-top:4px;
   }
 
+
   .cards{
     width:calc(100% - 20px);
+
     padding-top:28px;
+    padding-bottom:60px;
   }
+
+
+  /*
+    スマホでは
+    ◁　カード　▷
+    の間隔を小さく
+  */
+
+  .slider-wrap{
+    grid-template-columns:34px minmax(0,1fr) 34px;
+    column-gap:4px;
+  }
+
+
+  .slide-button{
+    width:34px;
+    height:34px;
+
+    font-size:15px;
+  }
+
 
   .card{
     padding:27px 23px;
+
     border-radius:15px;
   }
 
+
   .two-column{
     grid-template-columns:1fr;
+
     gap:10px;
   }
 
+
   .flow > div{
     grid-template-columns:1fr;
+
     gap:3px;
   }
+
 
   p{
     font-size:14px;
   }
 
+
   .key{
     font-size:16px;
   }
 
-  .slide-button{
-    width:36px;
-    height:36px;
+
+  .roles{
+    font-size:14px;
+
+    padding-left:5px;
+    padding-right:5px;
   }
 
-  .slide-button.prev{
-    transform:translateX(-18px);
-  }
 
-  .slide-button.next{
-    transform:translateX(18px);
+  .slide-count{
+    margin-top:14px;
   }
 
 }
