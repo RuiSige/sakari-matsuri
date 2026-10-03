@@ -91,27 +91,26 @@ CARD SLIDER
 ========================= */
 
 .cards{
-width:min(820px,calc(100% - 28px));
-margin:0 auto;
-padding:32px 0 70px;
-overflow:hidden;
+  width:min(820px,calc(100% - 28px));
+  margin:0 auto;
+  padding:32px 0 70px;
+  overflow:hidden;
 }
 
 .card-track{
-display:flex;
-width:100%;
-margin:0;
-padding:0;
-transition:transform .42s ease;
-will-change:transform;
-touch-action:pan-y;
+  display:flex;
+  margin:0;
+  padding:0;
+  transition:transform .42s ease;
+  will-change:transform;
+  touch-action:pan-y;
 }
 
 .card-track > .card{
-flex:0 0 100%;
-width:100%;
-min-width:100%;
-margin:0;
+  flex:0 0 auto;
+  width:100%;
+  min-width:0;
+  margin:0;
 }
 
 
