@@ -512,3 +512,20 @@ footer{
     padding:26px 20px 40px;
   }
 }
+
+.role-item{
+  padding:10px 0;
+  border-top:1px solid var(--line);
+}
+
+.role-item:last-of-type{
+  border-bottom:1px solid var(--line);
+}
+
+.role-item h3{
+  margin:0 0 4px;
+}
+
+.role-item p{
+  margin:0;
+}
