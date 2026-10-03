@@ -21,13 +21,11 @@ body{
   background:var(--paper);
   color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;
-  line-height:1.78;
+  line-height:1.7;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   width:100%;
@@ -78,22 +76,19 @@ h1{
 }
 
 .subtitle{
-  margin:0 0 8px;
+  margin:0 0 15px;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:clamp(15px,3.5vw,21px);
 }
 
 .lead{
-  margin:10px 24px 0;
+  margin:0;
   color:var(--muted);
-  font-size:12px;
-  line-height:1.7;
+  font-size:14px;
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .cards{
   width:min(900px,calc(100% - 28px));
@@ -133,16 +128,14 @@ h1{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:18px;
-  padding:clamp(20px,3.5vw,32px);
+  padding:clamp(17px,3vw,27px);
   margin-bottom:0;
   box-shadow:0 7px 25px rgba(40,35,25,.045);
-  line-height:1.78;
+  line-height:1.7;
 }
 
 
-/* =========================
-   SLIDE BUTTON
-========================= */
+/* SLIDE BUTTON */
 
 .slide-button{
   display:grid;
@@ -186,32 +179,30 @@ h1{
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 
 .number{
   display:block;
   color:var(--orange);
   font-size:12px;
   letter-spacing:.18em;
-  margin-bottom:7px;
+  margin-bottom:6px;
 }
 
 h2{
-  margin:0 0 16px;
+  margin:0 0 13px;
   font-size:clamp(23px,5vw,32px);
-  line-height:1.48;
+  line-height:1.45;
 }
 
 h3{
-  margin:16px 0 4px;
+  margin:14px 0 4px;
   font-size:15px;
   color:#57534c;
 }
 
 p{
-  margin:0 0 9px;
+  margin:0 0 7px;
   font-size:15px;
 }
 
@@ -222,58 +213,54 @@ strong{
 .key{
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:17px;
-  line-height:1.78;
+  line-height:1.75;
 }
 
 ul{
-  margin:0 0 10px;
+  margin:0 0 9px;
   padding-left:1.35em;
 }
 
 li{
-  margin-bottom:6px;
+  margin-bottom:5px;
 }
 
 
-/* =========================
-   TWO COLUMN
-========================= */
+/* TWO COLUMN */
 
 .two-column{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-bottom:16px;
+  gap:14px;
+  margin-bottom:14px;
 }
 
 .two-column > div{
   border-top:2px solid var(--blue);
-  padding:13px 2px 0;
+  padding:11px 2px 0;
 }
 
 .label{
   display:block;
-  margin-bottom:6px;
+  margin-bottom:5px;
   color:var(--muted);
   font-size:12px;
   letter-spacing:.12em;
 }
 
 
-/* =========================
-   FLOW
-========================= */
+/* FLOW */
 
 .flow{
   border-top:1px solid var(--line);
-  margin:6px 0 18px;
+  margin:5px 0 16px;
 }
 
 .flow > div{
   display:grid;
   grid-template-columns:145px 1fr;
   gap:16px;
-  padding:10px 0;
+  padding:8px 0;
   border-bottom:1px solid var(--line);
 }
 
@@ -287,41 +274,37 @@ li{
 }
 
 
-/* =========================
-   ROLES / QUESTION
-========================= */
+/* ROLES / QUESTION */
 
 .roles{
-  padding:13px 10px;
+  padding:11px 10px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:16px;
-  line-height:1.95;
+  line-height:1.9;
 }
 
 .question{
-  margin-top:16px;
+  margin-top:14px;
   color:#5f756f;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
   font-size:16px;
-  line-height:1.7;
+  line-height:1.65;
 }
 
 
-/* =========================
-   TERMS
-========================= */
+/* TERMS */
 
 .terms{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin:18px 0;
+  gap:7px;
+  margin:16px 0;
 }
 
 .terms span{
-  padding:6px 15px;
+  padding:5px 14px;
   border:1px solid var(--line);
   border-radius:99px;
   background:#fbfaf5;
@@ -329,35 +312,29 @@ li{
 }
 
 
-/* =========================
-   NOTE
-========================= */
+/* NOTE */
 
 .note{
-  margin:16px 0;
-  padding:11px 13px;
+  margin:14px 0;
+  padding:10px 13px;
   border-left:3px solid var(--blue);
   background:#f5f6f1;
   font-size:13px;
 }
 
 
-/* =========================
-   FINAL CARD
-========================= */
+/* FINAL CARD */
 
 .final{
-  padding-bottom:42px;
+  padding-bottom:38px;
 }
 
 .final .key:last-child{
-  margin-top:18px;
+  margin-top:16px;
 }
 
 
-/* =========================
-   FOOTER IMAGE
-========================= */
+/* FOOTER IMAGE */
 
 .footer-illustration{
   width:100%;
@@ -373,9 +350,7 @@ li{
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   padding:28px 20px 42px;
@@ -386,9 +361,7 @@ footer{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -405,7 +378,7 @@ footer{
   }
 
   .hero-illustration{
-    margin-top:0;
+    margin-top:4px;
   }
 
   .cards{
@@ -435,96 +408,96 @@ footer{
   }
 
   .card{
-    padding:20px 20px;
+    padding:17px 18px;
     border-radius:15px;
   }
 
   .number{
-    margin-bottom:6px;
+    margin-bottom:5px;
   }
 
   h2{
-    margin-bottom:14px;
+    margin-bottom:12px;
   }
 
   h3{
-    margin-top:14px;
-    margin-bottom:4px;
+    margin-top:13px;
+    margin-bottom:3px;
   }
 
   p{
     font-size:14px;
-    margin-bottom:8px;
+    margin-bottom:6px;
   }
 
   .key{
     font-size:16px;
-    line-height:1.75;
+    line-height:1.7;
   }
 
   ul{
-    margin-bottom:9px;
+    margin-bottom:8px;
   }
 
   li{
-    margin-bottom:5px;
+    margin-bottom:4px;
   }
 
   .two-column{
     grid-template-columns:1fr;
-    gap:9px;
-    margin-bottom:14px;
+    gap:8px;
+    margin-bottom:12px;
   }
 
   .two-column > div{
-    padding-top:11px;
+    padding-top:10px;
   }
 
   .flow{
-    margin-bottom:16px;
+    margin-bottom:14px;
   }
 
   .flow > div{
     grid-template-columns:1fr;
     gap:2px;
-    padding:9px 0;
+    padding:8px 0;
   }
 
   .roles{
     font-size:14px;
-    line-height:1.9;
+    line-height:1.85;
     padding-left:5px;
     padding-right:5px;
   }
 
   .question{
-    margin-top:14px;
+    margin-top:12px;
     font-size:15px;
-    line-height:1.65;
+    line-height:1.6;
   }
 
   .terms{
-    gap:7px;
-    margin:16px 0;
+    gap:6px;
+    margin:14px 0;
   }
 
   .terms span{
-    padding:5px 13px;
+    padding:5px 12px;
     font-size:13px;
   }
 
   .note{
-    margin:14px 0;
-    padding:10px 12px;
+    margin:12px 0;
+    padding:9px 12px;
     font-size:12px;
   }
 
   .final{
-    padding-bottom:38px;
+    padding-bottom:34px;
   }
 
   .slide-count{
-    margin-top:12px;
+    margin-top:11px;
   }
 
   footer{
