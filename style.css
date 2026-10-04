@@ -572,3 +572,40 @@ footer{
   }
 
 }
+
+.site-info{
+  max-width:600px;
+  margin:0 auto;
+  padding:28px 20px 10px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+.site-info > a:first-child{
+  display:inline-block;
+  margin-bottom:16px;
+}
+
+.site-info img{
+  display:block;
+  width:120px;
+  height:auto;
+  margin:0 auto;
+}
+
+.site-info p{
+  margin:0 0 8px;
+  font-size:12px;
+}
+
+.email-link{
+  color:var(--ink);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.email-link:hover{
+  opacity:.65;
+}
