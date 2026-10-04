@@ -609,3 +609,15 @@ footer{
 .email-link:hover{
   opacity:.65;
 }
+
+/* FOOTER AREA - WHITE */
+
+.site-info{
+  max-width:none;
+  width:100%;
+  background:#fff;
+}
+
+footer{
+  background:#fff;
+}
