@@ -713,19 +713,22 @@
         `${currentIndex + 1} / ${cards.length}`;
 
       prevButton.disabled = currentIndex === 0;
-      nextButton.disabled = currentIndex === cards.length - 1;
+      nextButton.disabled = false;
 
     }
 
 
-    nextButton.addEventListener("click", () => {
+   nextButton.addEventListener("click", () => {
 
-      if (currentIndex < cards.length - 1) {
-        currentIndex++;
-        updateSlider();
-      }
+  if (currentIndex < cards.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
 
-    });
+  updateSlider();
+
+});
 
 
     prevButton.addEventListener("click", () => {
