@@ -635,3 +635,91 @@ footer{
 .site-info p:last-of-type{
   margin-bottom:4px;
 }
+
+/* FESTIVAL AUDIO */
+.festival-audio{
+  margin:24px auto 4px;
+  text-align:center;
+}
+
+.audio-button{
+  position:relative;
+  display:block;
+  width:min(360px,80%);
+  margin:0 auto;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  line-height:0;
+}
+
+.audio-button img{
+  display:block;
+  width:100%;
+  height:auto;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.audio-button:hover img{
+  transform:scale(1.02);
+}
+
+.audio-button:active img{
+  transform:scale(.98);
+}
+
+.audio-play-mark{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:rgba(255,253,248,.9);
+  color:var(--ink);
+  font-size:20px;
+  line-height:1;
+  padding-left:3px;
+  box-shadow:0 3px 12px rgba(40,35,25,.15);
+  transition:background .2s, transform .2s;
+}
+
+.audio-button:hover .audio-play-mark{
+  transform:translate(-50%,-50%) scale(1.06);
+}
+
+.audio-button.is-playing .audio-play-mark{
+  font-size:17px;
+  padding-left:0;
+}
+
+.audio-caption{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.08em;
+}
+
+@media(max-width:600px){
+  .festival-audio{
+    margin-top:20px;
+  }
+
+  .audio-button{
+    width:78%;
+  }
+
+  .audio-play-mark{
+    width:46px;
+    height:46px;
+    font-size:17px;
+  }
+
+  .audio-caption{
+    font-size:11px;
+  }
+}
