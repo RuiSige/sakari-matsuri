@@ -757,6 +757,32 @@
 
 
     updateSlider();
+    <script>
+  const festivalAudio = document.getElementById("festivalAudio");
+  const festivalAudioButton = document.getElementById("festivalAudioButton");
+  const playMark = festivalAudioButton.querySelector(".audio-play-mark");
+
+  festivalAudioButton.addEventListener("click", async () => {
+    if (festivalAudio.paused) {
+      try {
+        await festivalAudio.play();
+        festivalAudioButton.classList.add("is-playing");
+        playMark.textContent = "Ⅱ";
+      } catch (error) {
+        console.error("音声を再生できませんでした。", error);
+      }
+    } else {
+      festivalAudio.pause();
+      festivalAudioButton.classList.remove("is-playing");
+      playMark.textContent = "▶";
+    }
+  });
+
+  festivalAudio.addEventListener("ended", () => {
+    festivalAudioButton.classList.remove("is-playing");
+    playMark.textContent = "▶";
+  });
+</script>
 
   </script>
 
