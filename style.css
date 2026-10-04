@@ -726,3 +726,8 @@ footer{
 .audio-button{
   width:min(130px,70%);
 }
+.festival-step {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
