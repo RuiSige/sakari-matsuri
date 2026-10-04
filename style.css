@@ -621,3 +621,17 @@ footer{
 footer{
   background:#fff;
 }
+
+/* FOOTER spacing */
+
+.site-info > a:first-child{
+  margin-bottom:8px;
+}
+
+.site-info p{
+  margin:0 0 3px;
+}
+
+.site-info p:last-of-type{
+  margin-bottom:4px;
+}
