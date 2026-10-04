@@ -723,3 +723,6 @@ footer{
     font-size:11px;
   }
 }
+.audio-button{
+  width:min(300px,70%);
+}
