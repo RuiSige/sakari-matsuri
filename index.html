@@ -572,41 +572,65 @@
           </article>
 
 
-          <!-- 10 -->
-<article class="card final">
-  <span class="number">10</span>
-  <h2>祭りは「見るもの」だけではない</h2>
+            <!-- 10 -->
+          <article class="card final">
 
-  <p>祭りの日に、神輿や獅子舞を見る。それも祭りの楽しみ方のひとつです。</p>
+            <span class="number">10</span>
 
-  <p>でも、祭りは「見る人」だけで成り立っているわけではありません。</p>
+            <h2>祭りは「見るもの」だけではない</h2>
 
-  <p>神輿を担ぐ人、獅子舞を舞う人、太鼓や篠笛を奏でる人。そのほかにも、準備をする人、道具を用意する人、祭りを支える人がいます。</p>
+            <p>
+              祭りの日に、神輿や獅子舞を見る。それも祭りの楽しみ方のひとつです。
+            </p>
 
-  <p>それぞれが役割を担い、たくさんの人が関わることで、「盛の祭」がつくられています。</p>
+            <p>
+              でも、祭りは「見る人」だけで成り立っているわけではありません。
+            </p>
 
-  <p>祭りは、神社だけで行われるものではなく、地域の人たちが一緒につくり、受け継いできたものです。</p>
+            <p>
+              神輿を担ぐ人、獅子舞を舞う人、太鼓や篠笛を奏でる人。そのほかにも、準備をする人、道具を用意する人、祭りを支える人がいます。
+            </p>
 
-  <p class="question">祭りを見るとき、舞や音だけでなく、そこに関わっている人たちにも目を向けてみてください。</p>
+            <p>
+              それぞれが役割を担い、たくさんの人が関わることで、「盛の祭」がつくられています。
+            </p>
 
-  <p class="key">
-    この地域で続いてきた祭りを知ること。<br>
-    そして、実際に見て、感じてみること。<br>
-    それが、「盛の祭を知る」ということなのかもしれません。
-  </p>
-</article>
-<div class="festival-audio">
-  <button class="audio-button" id="festivalAudioButton" type="button" aria-label="盛の祭の音を再生">
-    <img src="illustration-08.png" alt="篠笛を吹く人々">
-    <span class="audio-play-mark">▶</span>
-  </button>
+            <p>
+              祭りは、神社だけで行われるものではなく、地域の人たちが一緒につくり、受け継いできたものです。
+            </p>
 
-  <p class="audio-caption">盛の祭の音を聴いてみる</p>
+            <p class="question">
+              祭りを見るとき、舞や音だけでなく、そこに関わっている人たちにも目を向けてみてください。
+            </p>
 
-  <audio id="festivalAudio" preload="metadata">
-    <source src="festival-audio.mp3" type="audio/mpeg">
-  </audio>
-</div>
+            <p class="key">
+              この地域で続いてきた祭りを知ること。<br>
+              そして、実際に見て、感じてみること。<br>
+              それが、「盛の祭を知る」ということなのかもしれません。
+            </p>
+
+            <div class="festival-audio">
+
+              <button
+                class="audio-button"
+                id="festivalAudioButton"
+                type="button"
+                aria-label="盛の祭の音を再生"
+              >
+                <img src="illustration-08.png" alt="篠笛を吹く人々">
+                <span class="audio-play-mark">▶</span>
+              </button>
+
+              <p class="audio-caption">盛の祭の音を聴いてみる</p>
+
+              <audio id="festivalAudio" preload="metadata">
+                <source src="festival-audio.mp3" type="audio/mpeg">
+              </audio>
+
+            </div>
+
+          </article>
+
 
         </div>
       </div>
@@ -637,19 +661,21 @@
     <img src="illustration-02.jpg" alt="盛の祭をイメージしたイラスト">
   </div>
 
-<div class="site-info">
-  <a href="https://designjishac.amebaownd.com/" target="_blank" rel="noopener">
-    <img src="designjishac-logo.png" alt="designJishac">
-  </a>
 
-  <p>このサイトはdesignJishacが個人的に制作したものです。<br>
-    内容に間違いや、追加・修正したい情報などがありましたら、ご連絡ください。
-  </p>
+  <div class="site-info">
+    <a href="https://designjishac.amebaownd.com/" target="_blank" rel="noopener">
+      <img src="designjishac-logo.png" alt="designJishac">
+    </a>
 
-  <a class="email-link" href="mailto:r93u12i@yahoo.co.jp">
-    r93u12i@yahoo.co.jp
-  </a>
-</div>
+    <p>このサイトはdesignJishacが個人的に制作したものです。<br>
+      内容に間違いや、追加・修正したい情報などがありましたら、ご連絡ください。
+    </p>
+
+    <a class="email-link" href="mailto:r93u12i@yahoo.co.jp">
+      r93u12i@yahoo.co.jp
+    </a>
+  </div>
+
 
   <!-- SLIDER SCRIPT -->
 
@@ -676,6 +702,7 @@
 
       prevButton.disabled = currentIndex === 0;
       nextButton.disabled = currentIndex === cards.length - 1;
+
     }
 
 
@@ -731,23 +758,30 @@
         const diffX = touch.clientX - startX;
         const diffY = touch.clientY - startY;
 
+
         /* 縦スクロールを邪魔しない */
+
         if (Math.abs(diffX) < Math.abs(diffY)) {
           return;
         }
 
+
         /* 小さな動きは無視 */
+
         if (Math.abs(diffX) < 40) {
           return;
         }
+
 
         if (diffX < 0 && currentIndex < cards.length - 1) {
           currentIndex++;
         }
 
+
         if (diffX > 0 && currentIndex > 0) {
           currentIndex--;
         }
+
 
         updateSlider();
 
@@ -757,34 +791,64 @@
 
 
     updateSlider();
-    <script>
-  const festivalAudio = document.getElementById("festivalAudio");
-  const festivalAudioButton = document.getElementById("festivalAudioButton");
-  const playMark = festivalAudioButton.querySelector(".audio-play-mark");
 
-  festivalAudioButton.addEventListener("click", async () => {
-    if (festivalAudio.paused) {
-      try {
-        await festivalAudio.play();
-        festivalAudioButton.classList.add("is-playing");
-        playMark.textContent = "Ⅱ";
-      } catch (error) {
-        console.error("音声を再生できませんでした。", error);
+
+    /* FESTIVAL AUDIO */
+
+    const festivalAudio =
+      document.getElementById("festivalAudio");
+
+    const festivalAudioButton =
+      document.getElementById("festivalAudioButton");
+
+    const playMark =
+      festivalAudioButton.querySelector(".audio-play-mark");
+
+
+    festivalAudioButton.addEventListener("click", async () => {
+
+      if (festivalAudio.paused) {
+
+        try {
+
+          await festivalAudio.play();
+
+          festivalAudioButton.classList.add("is-playing");
+
+          playMark.textContent = "Ⅱ";
+
+        } catch (error) {
+
+          console.error(
+            "音声を再生できませんでした。",
+            error
+          );
+
+        }
+
+      } else {
+
+        festivalAudio.pause();
+
+        festivalAudioButton.classList.remove("is-playing");
+
+        playMark.textContent = "▶";
+
       }
-    } else {
-      festivalAudio.pause();
-      festivalAudioButton.classList.remove("is-playing");
-      playMark.textContent = "▶";
-    }
-  });
 
-  festivalAudio.addEventListener("ended", () => {
-    festivalAudioButton.classList.remove("is-playing");
-    playMark.textContent = "▶";
-  });
-</script>
+    });
+
+
+    festivalAudio.addEventListener("ended", () => {
+
+      festivalAudioButton.classList.remove("is-playing");
+
+      playMark.textContent = "▶";
+
+    });
 
   </script>
+
 
 </body>
 </html>
