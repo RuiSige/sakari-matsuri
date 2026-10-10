@@ -782,3 +782,13 @@ footer{
 .saru-doll-section h3 {
   margin-bottom: 0.6em;
 }
+
+.role-saru {
+  margin-bottom: 0;
+}
+
+.saru-doll-section {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
