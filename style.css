@@ -726,3 +726,43 @@ footer{
 .audio-button{
   width:min(130px,70%);
 }
+
+
+/* ヘッダーイラストのホバー切り替え */
+
+.hero-illustration-swap {
+  position: relative;
+  line-height: 0;
+}
+
+.hero-illustration-swap .hero-image-normal {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-illustration-swap .hero-image-hover {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* マウス操作ができる端末で切り替える */
+@media (hover: hover) and (pointer: fine) {
+  .hero-illustration-swap:hover .hero-image-hover {
+    opacity: 1;
+  }
+}
+
+/* 動きを減らす設定をしている場合 */
+@media (prefers-reduced-motion: reduce) {
+  .hero-illustration-swap .hero-image-hover {
+    transition: none;
+  }
+}
