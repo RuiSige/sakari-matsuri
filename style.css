@@ -766,3 +766,9 @@ footer{
     transition: none;
   }
 }
+.saru-illustration {
+  display: block;
+  width: 110px;
+  height: auto;
+  margin: 16px 0 0 auto;
+}
